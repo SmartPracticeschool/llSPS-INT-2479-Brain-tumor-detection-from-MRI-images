@@ -1,13 +1,22 @@
-#import the ImageDataGenerator library
+#import the ImageDataGenerator library.
 import keras
 from keras.preprocessing.image import ImageDataGenerator
 
 
-#configure ImageDataGenerator generator
+#configure ImageDataGenerator generator.
 train_datagen= ImageDataGenerator(rescale = 1./255 ,shear_range=.2,zoom_range=0.01,horizontal_flip=True)
 test_datagen=ImageDataGenerator(rescale=1./255)
 
 
-#applying ImageDataGenerator functionality to trainset and testset (location as per my storage in pc)
+#applying ImageDataGenerator functionality to trainset and testset. (location as per my storage in pc)
 x_train=train_datagen.flow_from_directory(r'C:\Users\DILIP KUMAR B C\Desktop\Brain MRI dataset\training_set',target_size=(64,64),batch_size=10,class_mode='binary')
 x_test=test_datagen.flow_from_directory(r'C:\Users\DILIP KUMAR B C\Desktop\Brain MRI dataset\test_set',target_size=(64,64),batch_size=10,class_mode='binary')
+
+
+#Importing the model building libraries.
+from keras.models import Sequential
+from keras.layers import Dense
+from keras.layers import Convolution2D
+from keras.layers import MaxPooling2D
+from keras.layers import Flatten
+model=Sequential()
