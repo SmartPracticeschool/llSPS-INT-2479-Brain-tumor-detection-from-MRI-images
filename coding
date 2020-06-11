@@ -23,3 +23,7 @@ from keras.layers import Flatten
 
 #initialization of model
 model=Sequential()
+
+
+#Loading Preprocessed data. (checking the indices of the YES or NO case)
+print(x_train.class_indices)
