@@ -1,0 +1,3 @@
+#import the ImageDataGenerator library
+import keras
+from keras.preprocessing.image import ImageDataGenerator
